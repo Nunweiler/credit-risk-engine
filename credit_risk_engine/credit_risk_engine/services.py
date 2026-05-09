@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Dict, Any, Optional, List
 
 from .models import Cliente, Renda, Divida
 from .repositories import (
@@ -18,10 +18,10 @@ class ClienteService:
         cliente = Cliente(id=0, nome=nome, cpf=cpf, data_nascimento=data_nascimento)
         return self._repo.adicionar(cliente)
 
-    def obter_cliente(self, cliente_id: int) -> Cliente | None:
+    def obter_cliente(self, cliente_id: int) -> Optional[Cliente]:
         return self._repo.obter_por_id(cliente_id)
 
-    def listar_clientes(self) -> list[Cliente]:
+    def listar_clientes(self) -> List[Cliente]:
         return self._repo.listar()
 
 

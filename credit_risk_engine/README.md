@@ -36,17 +36,37 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Uso
+## Testes
 
-### Exemplo Básico
+O projeto inclui uma suíte completa de testes unitários para validar as funcionalidades de cadastro de clientes.
 
-```python
-from credit_risk_engine import CreditRiskAnalyzer
+### Executando os Testes
 
-analyzer = CreditRiskAnalyzer()
-risk_score = analyzer.calculate_risk(customer_data)
-print(f"Risco de Crédito: {risk_score}")
+Para executar os testes, certifique-se de que o ambiente virtual está ativado e execute:
+
+```bash
+python -m pytest
 ```
+
+Ou para uma saída mais detalhada:
+
+```bash
+python -m pytest -v
+```
+
+### Estrutura de Testes
+
+- `tests/test_models.py`: Testes para os modelos de dados (Cliente, Renda, Divida, AvaliacaoRisco)
+- `tests/test_cliente_repository.py`: Testes para o repositório de clientes
+- `tests/test_cliente_service.py`: Testes para o serviço de clientes
+
+### Cobertura de Testes
+
+Os testes cobrem:
+- Criação e validação de modelos de dados
+- Operações CRUD no repositório de clientes
+- Lógica de negócio do serviço de clientes
+- Cenários de sucesso e erro
 
 ## Estrutura do Projeto
 
